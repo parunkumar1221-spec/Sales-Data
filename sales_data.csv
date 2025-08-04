@@ -1,0 +1,11 @@
+Date,Invoice ID,Customer Name,Product,Category,Quantity,Unit Price,Total,Region,Salesperson
+2025-08-01,INV001,John Smith,Laptop,Electronics,2,750.0,1500,North,Anna Roy
+2025-08-01,INV002,Sarah Lee,Smartphone,Electronics,3,500.0,1500,South,David Khan
+2025-08-02,INV003,Emily Clark,Office Chair,Furniture,1,120.0,120,East,Michael Patel
+2025-08-02,INV004,Daniel Lewis,Notebook,Stationery,10,2.5,25,West,Neha Jain
+2025-08-03,INV005,Emma White,Tablet,Electronics,2,300.0,600,North,Anna Roy
+2025-08-03,INV006,Oliver Jones,Desk,Furniture,1,200.0,200,South,David Khan
+2025-08-04,INV007,Ava Green,Pen Pack,Stationery,5,3.0,15,East,Michael Patel
+2025-08-04,INV008,Liam Walker,Monitor,Electronics,1,220.0,220,West,Neha Jain
+2025-08-04,INV009,Mia Hall,Whiteboard,Furniture,2,80.0,160,North,Anna Roy
+2025-08-04,INV010,Noah Young,Printer,Electronics,1,150.0,150,South,David Khan
