@@ -1,0 +1,64 @@
+
+SQL for Data Analysis
+
+1. What is SQL for Data Analysis?
+SQL (Structured Query Language) is used to:
+- Retrieve data from databases
+- Aggregate and summarize results
+- Filter & sort information
+- Combine multiple data sources
+- Prepare data for visualization
+
+2. Core SQL Commands
+SELECT   - Pick columns
+WHERE    - Filter rows
+GROUP BY - Aggregate by category
+ORDER BY - Sort results
+JOIN     - Combine tables
+HAVING   - Filter aggregated results
+LIMIT    - Limit number of results
+
+Example: SELECT product, sales FROM sales WHERE region = 'North';
+
+3. Example Data Table (sales)
+order_id | date       | region | category     | product   | sales | quantity | salesperson
+1        | 2025-08-01| North  | Electronics  | Laptop    | 1500  | 2        | Anna Roy
+
+4. Example Analysis Queries
+
+a) Total Sales by Category
+SELECT category, SUM(sales) AS total_sales
+FROM sales
+GROUP BY category
+ORDER BY total_sales DESC;
+
+b) Top 5 Salespeople
+SELECT salesperson, SUM(sales) AS total_sales
+FROM sales
+GROUP BY salesperson
+ORDER BY total_sales DESC
+LIMIT 5;
+
+c) Sales Trends Over Time
+SELECT date, SUM(sales) AS daily_sales
+FROM sales
+GROUP BY date
+ORDER BY date;
+
+d) Regional Performance
+SELECT region, SUM(sales) AS total_sales, COUNT(*) AS orders
+FROM sales
+GROUP BY region
+ORDER BY total_sales DESC;
+
+e) Electronics Sales Only
+SELECT date, SUM(sales) AS electronics_sales
+FROM sales
+WHERE category = 'Electronics'
+GROUP BY date
+ORDER BY date;
+
+5. How to Practice
+- Use SQLite for quick local testing
+- Import CSVs into MySQL or PostgreSQL
+- Use Mode Analytics or SQLFiddle for online practice
