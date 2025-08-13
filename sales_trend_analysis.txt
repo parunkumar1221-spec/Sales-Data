@@ -1,0 +1,52 @@
+
+Sales Trend Analysis Using Aggregations
+
+1. What It Means:
+Sales trend analysis helps summarize sales over time to identify growth, decline, or seasonal patterns.
+
+2. Common Aggregation Functions:
+- SUM(): Total sales or quantity
+- AVG(): Average sales
+- COUNT(): Number of transactions
+- MAX(): Highest sale
+- MIN(): Lowest sale
+
+3. Example Queries:
+
+a) Daily Sales Trend:
+SELECT date, SUM(sales) AS daily_sales
+FROM sales
+GROUP BY date
+ORDER BY date;
+
+b) Monthly Sales Trend:
+SELECT DATE_FORMAT(date, '%Y-%m') AS month, SUM(sales) AS monthly_sales
+FROM sales
+GROUP BY month
+ORDER BY month;
+
+c) Yearly Sales Trend:
+SELECT YEAR(date) AS year, SUM(sales) AS yearly_sales
+FROM sales
+GROUP BY year
+ORDER BY year;
+
+d) Average Daily Sales:
+SELECT AVG(daily_sales) AS avg_daily_sales
+FROM (
+    SELECT date, SUM(sales) AS daily_sales
+    FROM sales
+    GROUP BY date
+) AS subquery;
+
+e) Top 3 Months by Sales:
+SELECT DATE_FORMAT(date, '%Y-%m') AS month, SUM(sales) AS monthly_sales
+FROM sales
+GROUP BY month
+ORDER BY monthly_sales DESC
+LIMIT 3;
+
+4. Visualization Ideas:
+- Line chart: Sales over time
+- Bar chart: Monthly or yearly sales totals
+- Heatmap: Sales by month vs year
